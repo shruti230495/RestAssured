@@ -10,8 +10,8 @@ public class httpmethod {
     @Test
     void getUser() {
         given()
-                .when()
-                .get("https://reqres.in/api/users?page=2")
+                .when().
+                get("https://reqres.in/api/users?page=2")
                 .then()
                 .statusCode(200)
                 .body("page", equalTo(2))
@@ -37,6 +37,7 @@ public class httpmethod {
 
 
     }
+
 
     @Test
     void updateUser() {
