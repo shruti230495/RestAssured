@@ -67,6 +67,9 @@ public class httpmethod {
                 .log().all();
 
         System.out.println("This are my testcases");
+
+        System.out.println("This are my testcases222");
+
     }
 }
 
