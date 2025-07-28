@@ -1,6 +1,7 @@
 import org.testng.annotations.Test;
 import java.util.HashMap;
 
+import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
@@ -9,9 +10,11 @@ public class httpmethod {
 
     @Test
     void getUser() {
-        given()
-                .when().
-                get("https://reqres.in/api/users?page=2")
+                 given()
+                         .header("Content-Type", "application/json")
+                         .header("x-api-key", "reqres-free-v1")
+                .when()
+                .get("https://reqres.in/api/users?page=2")
                 .then()
                 .statusCode(200)
                 .body("page", equalTo(2))
@@ -34,8 +37,6 @@ public class httpmethod {
                 .then()
                 .log().all()
                 .statusCode(201); // Expecting 201
-
-
     }
 
 
